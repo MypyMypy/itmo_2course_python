@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}
+    </title>
+    <!-- Подключаем кастомные стили -->
+    <link rel="stylesheet" href="{{ base_url }}/css/styles.css" />
+  </head>
+  <body>
+    {{ page.content }} {%- for script in config.extra_javascript %} {{ script |
+    script_tag }} {%- endfor %}
+  </body>
+</html>
